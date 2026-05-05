@@ -1,0 +1,14 @@
+{
+  "file_list_api": {
+    "description": "file_list_api (文件列表url)",
+    "type": "string"
+  },
+  "file_content_api": {
+    "description": "file_content_api (文件内容url)",
+    "type": "string"
+  },
+  "token": {
+    "description": "token",
+    "type": "string"
+  }
+}

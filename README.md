@@ -1,14 +1,35 @@
-# astrbot-plugin-helloworld
+# astrbot_plugin_remote_resources
+本工具可以让AI自动读取来将外部项目的资料
+提供两个函数工具
 
-AstrBot 插件模板 / A template plugin for AstrBot plugin feature
+## get_user_remote_file_list
+获取文件列表，以JSON POST请求外部项目，
+请求参数：
 
-> [!NOTE]
-> This repo is just a template of [AstrBot](https://github.com/AstrBotDevs/AstrBot) Plugin.
-> 
-> [AstrBot](https://github.com/AstrBotDevs/AstrBot) is an agentic assistant for both personal and group conversations. It can be deployed across dozens of mainstream instant messaging platforms, including QQ, Telegram, Feishu, DingTalk, Slack, LINE, Discord, Matrix, etc. In addition, it provides a reliable and extensible conversational AI infrastructure for individuals, developers, and teams. Whether you need a personal AI companion, an intelligent customer support agent, an automation assistant, or an enterprise knowledge base, AstrBot enables you to quickly build AI applications directly within your existing messaging workflows.
+| 参数 | 类型 |
+|----|----|
+| session_id | string |
+| token | string |
 
-# Supports
+外部项目需要返回json文本数据，格式如下：
+```json
+[
+  {
+    "file_id": "文件编号( 必须)",
+    "file_name": "文件名 (必须)",
+    "desc": "文件介绍 (可选)",
+    "size": "文件大小 (可选)"
+  }
+]
+```
 
-- [AstrBot Repo](https://github.com/AstrBotDevs/AstrBot)
-- [AstrBot Plugin Development Docs (Chinese)](https://docs.astrbot.app/dev/star/plugin-new.html)
-- [AstrBot Plugin Development Docs (English)](https://docs.astrbot.app/en/dev/star/plugin-new.html)
+## get_user_remote_read_file
+读取文件内容，以JSON POST请求外部项目，请求参数：
+
+| 参数 | 类型 |
+|----|----|
+| file_id | string |
+| session_id | string |
+| token | string |
+
+外部项目直接返回文件内容
