@@ -1,6 +1,6 @@
 name: astrbot_plugin_remote_resources
 display_name: 远程文件读取
 desc: 提供函数工具和标准接口。让AI可以读取远程系统的文件内容。
-version: v1.0.0
+version: v1.0.1
 author: Lihz
 repo: https://github.com/senaairi/astrbot_plugin_remote_resources

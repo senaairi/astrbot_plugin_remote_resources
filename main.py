@@ -10,7 +10,7 @@ from astrbot.api.star import Context, Star, register
     "astrbot_plugin_remote_resources",
     "lihz",
     "提供函数工具和标准接口。让AI可以读取远程系统的文件内容",
-    "1.0.0",
+    "1.0.1",
 )
 class MyPlugin(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
@@ -100,7 +100,7 @@ class MyPlugin(Star):
                         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0",
                     },
                 )
-                if response.raise_for_status() != 200:
+                if response.status_code != 200:
                     return CallToolResult(
                         content=[
                             TextContent(
